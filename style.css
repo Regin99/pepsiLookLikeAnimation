@@ -1,0 +1,61 @@
+body {
+  background-color: #0050a5;
+}
+
+.circle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 50%;
+  border: 7px solid #ffffff;
+  height: 200px;
+  width: 200px;
+  background-color: #0050a5;
+  overflow: hidden;
+}
+
+.circle::before,
+.circle::after {
+  content: "";
+  position: absolute;
+  top: -120%;
+  width: 200%;
+  height: 200%;
+}
+
+.circle::before {
+  left: -80%;
+  border-radius: 40%;
+  background-color: #ffffff;
+  animation: rotate25 10s linear infinite;
+}
+
+.circle::after {
+  left: -105%;
+  border-radius: 45%;
+  background-color: #ff1230;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate25 {
+  0% {
+    transform: rotate(25deg);
+  }
+
+  100% {
+    transform: rotate(385deg);
+  }
+}
